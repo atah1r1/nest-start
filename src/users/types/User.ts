@@ -11,8 +11,8 @@ export class UserSerialized {
     @Exclude()
     password: string;
 
-    constructor(partial: Partial<UserSerialized>) {
-        Object.assign(this, partial);
+    constructor(user: Partial<UserSerialized>) {
+        Object.assign(this, user);
     }
 }
 

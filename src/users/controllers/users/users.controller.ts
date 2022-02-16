@@ -7,12 +7,14 @@ export class UsersController {
 
     constructor(private readonly UsersService: UsersService) { }
 
+    // Return all users 
     @Get('')
     @UseInterceptors(ClassSerializerInterceptor)
     getUsers() {
         return this.UsersService.getUsers();
     }
 
+    // Return single user with custom username
     @Get('/:username')
     @UseInterceptors(ClassSerializerInterceptor)
     getUserByUsername(@Param('username') username: string) {
